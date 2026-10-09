@@ -5,21 +5,114 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gotcha! | University of Suffolk</title>
 <style>
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#222;background:#fff;line-height:1.6}
-  header{background:#fff;border-bottom:4px solid #c8102e;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
-  .logo{font-size:1.6rem;font-weight:bold;color:#c8102e;letter-spacing:.5px}
-  .logo span{color:#222}
-  nav a{color:#222;text-decoration:none;margin-left:20px;font-weight:bold}
-  nav a:hover{color:#c8102e}
-  .hero{background:#222;color:#fff;padding:72px 24px;text-align:center}
-  .hero h1{font-size:2.6rem;margin:0 0 16px}
-  .hero h1 em{color:#ff4d6a;font-style:normal}
-  main{max-width:800px;margin:40px auto;padding:0 24px;font-size:1.15rem}
-  main a{color:#c8102e;font-weight:bold}
-  .cta{display:inline-block;margin-top:16px;background:#c8102e;color:#fff;padding:12px 28px;text-decoration:none;font-weight:bold;border-radius:2px}
-  .cta:hover{background:#9d0d24}
-  footer{background:#c8102e;color:#fff;text-align:center;padding:24px;margin-top:48px;font-size:.9rem}
+  :root {
+    color-scheme: light;
+    --gold: #f0c84b;
+    --gold-dark: #725500;
+    --charcoal: #343432;
+    --ink: #292927;
+    --muted: #f3f2ef;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #fff;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px clamp(24px, 7vw, 96px);
+    background: #fff;
+    border-bottom: 1px solid #e6e4df;
+  }
+  .logo {
+    color: var(--gold-dark);
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+  .logo span { color: var(--charcoal); }
+  nav { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+  nav a {
+    padding: 8px 0;
+    color: var(--charcoal);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+  }
+  nav a:hover,
+  nav a:focus-visible {
+    border-bottom-color: var(--gold-dark);
+  }
+  nav a:focus-visible,
+  .cta:focus-visible,
+  main a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+  }
+  .hero {
+    padding: clamp(64px, 10vw, 120px) clamp(24px, 10vw, 140px);
+    background: var(--charcoal);
+    box-shadow: inset 0 -8px 0 var(--gold);
+    color: #fff;
+    text-align: left;
+  }
+  .hero h1 {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 24px;
+    font-size: 1.1rem;
+  }
+  main p { margin: 0 0 20px; }
+  main a { color: var(--gold-dark); font-weight: 700; }
+  .cta {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 13px 26px;
+    border: 2px solid var(--charcoal);
+    background: var(--charcoal);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+  .cta:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--ink);
+  }
+  footer {
+    margin-top: 48px;
+    padding: 28px 24px;
+    border-top: 6px solid var(--gold);
+    background: var(--charcoal);
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    header { align-items: flex-start; flex-direction: column; }
+    nav { gap: 4px 20px; }
+    .hero { padding-right: 24px; padding-left: 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+  }
 </style>
 </head>
 <body>
